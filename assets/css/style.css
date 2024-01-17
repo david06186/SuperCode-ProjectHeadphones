@@ -1,0 +1,150 @@
+/* - Universal Selectors */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* - At-rules */
+
+/* * Fonts */
+
+@font-face {
+  font-family: 'LucidaGrande';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 0% 200%;
+  src: url('/assets/fonts/LucidaGrande.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'WorkSans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 0% 200%;
+  src: url('/assets/fonts/WorkSans.ttf') format('truetype');
+}
+
+/* * MediaQueries */
+
+/* - Global Variables & Rules */
+
+:root {
+  /* * Variables */
+
+  --global--background--Color: #2e2e2e;
+  --global--border--Color: #fff;
+  --global--heading--Color: #ebccc2;
+  --global--text--Color: #737373;
+  --global--link--Color: #867772;
+  --global--link--active--Color: #fff;
+
+  /* * Rules */
+
+  font-size: 62.5%;
+
+  font-family: WorkSans;
+
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: unset;
+    cursor: pointer;
+  }
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+/* - IDs */
+
+#current-page {
+  color: var(--global--link--active--Color);
+}
+
+/* - Classes */
+
+/* * navigation */
+
+.social {
+  display: flex;
+  gap: clamp(1.65rem, 2.65rem, 3.65rem);
+  a {
+    &:hover {
+      text-decoration: underline;
+      color: var(--global--link--active--Color);
+      transition: 1.5s;
+    }
+    &:nth-of-type(2) {
+      padding-left: 2.7rem;
+    }
+  }
+}
+
+.nav-border {
+  margin: 1.5rem;
+  border-left: 0.6px solid var(--global--text--Color);
+  height: 4.8rem;
+}
+
+.nav-points {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  font-family: LucidaGrande;
+  a {
+    font-size: 1.6rem;
+    &:hover {
+      color: var(--global--link--active--Color);
+      transition: 1.5s;
+    }
+  }
+  p {
+    font-size: 3.2rem;
+  }
+}
+
+/* - Type Selectors */
+
+html {
+  background-color: var(--global--background--Color);
+  color: var(--global--text--Color);
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 5rem 15rem;
+    color: var(--global--link--Color);
+    font-size: clamp(0.6rem, 1.6rem, 2.6rem);
+    position: sticky;
+    top: 0px;
+  }
+
+  main {
+    aside {
+      position: relative;
+      margin: 3rem;
+      position: fixed;
+
+      svg {
+        position: absolute;
+        top: 7px;
+        left: -1px;
+      }
+
+      nav {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
